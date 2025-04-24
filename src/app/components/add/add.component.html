@@ -1,1 +1,21 @@
-<p>add works!</p>
+<div class="container mt-4" style="max-width: 500px;">
+    <h2>{{isEdit ? 'Edit' : 'Add'}} Item</h2>
+    <form (ngSubmit)="save()">
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input class="form-control" [(ngModel)]="item.name" name="name" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Phone</label>
+            <input type="tel" class="form-control" [(ngModel)]="item.phone" name="phone" required />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" [(ngModel)]="item.email" name="email" required />
+        </div>
+
+        <button class="btn btn-success me-2" (click)="formValid()">Save</button>
+        <button class="btn btn-secondary" (click)="cancel()" type="button">Cancel</button>
+    </form>
+</div>
